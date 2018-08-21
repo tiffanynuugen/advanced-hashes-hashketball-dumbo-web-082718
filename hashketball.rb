@@ -1,3 +1,5 @@
+require 'pry'
+
 def game_hash
  game_hash = {
 		:home => {
@@ -134,6 +136,7 @@ end
 
 
 def num_points_scored(player_name)
+  binding.pry
 	player_points = nil
 	game_hash.each do |location, team_data|
 
@@ -141,7 +144,7 @@ def num_points_scored(player_name)
             	if stats[:player_name] == player_name
             		player_points = stats[:points]
             	end
-		end	
+		end
 	end
 	player_points.to_i
 end
